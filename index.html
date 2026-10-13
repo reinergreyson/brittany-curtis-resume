@@ -65,7 +65,11 @@
       text-transform: uppercase;
       font-size: .82rem;
     }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.4rem); line-height: 1.08; margin: 12px 0; }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+      line-height: 1.08;
+      margin: 12px 0;
+    }
     .hero p { max-width: 720px; font-size: 1.12rem; color: #e3eaf3; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
     .button {
@@ -89,6 +93,7 @@
     .section-heading { margin-bottom: 16px; }
     h2 { color: var(--navy); font-size: 1.65rem; margin: 0 0 6px; }
     .section-heading p { color: var(--muted); margin: 0; }
+
     .panel, .card {
       background: var(--paper);
       border: 1px solid var(--line);
@@ -96,10 +101,15 @@
       padding: 23px;
       box-shadow: 0 5px 20px rgba(20, 43, 73, .04);
     }
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
     .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .card h3 { color: var(--navy); margin: 0 0 6px; font-size: 1.08rem; }
     .card p { margin: 8px 0; }
+
     .tag {
       display: inline-block;
       margin: 5px 5px 0 0;
@@ -114,25 +124,40 @@
     details { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; }
     summary { color: var(--blue); font-weight: 700; cursor: pointer; }
     details ul { padding-left: 20px; }
-    .education-item + .education-item { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 16px; }
+    .education-item + .education-item {
+      border-top: 1px solid var(--line);
+      margin-top: 16px;
+      padding-top: 16px;
+    }
 
-    /* Portfolio section */
+    /* Projects and portfolio */
     .project-card {
       border-top: 4px solid var(--yellow);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      min-width: 0;
     }
     .project-card .project-description { flex: 1; }
+
+    .project-preview {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--background);
+    }
+
     .project-links {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 16px;
     }
-    .project-links .button {
-      text-align: center;
-    }
+    .project-links .button { text-align: center; }
     .project-links .button.outline {
       background: white;
       border-color: var(--navy);
@@ -148,7 +173,12 @@
     .contact h2 { color: white; }
     .contact a { color: var(--yellow); }
     .contact p { overflow-wrap: anywhere; }
-    footer { text-align: center; color: var(--muted); padding: 20px 0 35px; font-size: .9rem; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 0 35px;
+      font-size: .9rem;
+    }
 
     @media (max-width: 720px) {
       .grid, .grid.three { grid-template-columns: 1fr; }
@@ -159,6 +189,7 @@
       .project-links { width: 100%; }
       .project-links .button { flex: 1 1 100%; }
     }
+
     @media print {
       body { background: white; color: #111; font-size: 10pt; }
       header { background: white; color: #111; border-bottom: 2px solid #222; }
@@ -166,13 +197,18 @@
       .hero { padding: 20px 0; }
       .hero-actions, nav, footer, .expand-controls { display: none !important; }
       main { padding: 10px 0; }
-      .panel, .card { box-shadow: none; break-inside: avoid; padding: 12px; }
+      .panel, .card {
+        box-shadow: none;
+        break-inside: avoid;
+        padding: 12px;
+      }
       .grid, .grid.three { grid-template-columns: 1fr 1fr; }
       details > * { display: block !important; }
       summary { display: none !important; }
       a { color: #111; text-decoration: none; }
       section { margin-bottom: 16px; }
       .project-links { display: none; }
+      .project-preview { max-width: 100%; }
     }
   </style>
 </head>
@@ -180,7 +216,10 @@
   <header>
     <div class="container">
       <nav aria-label="Main navigation">
-        <a class="brand" href="#home"><span class="spark" aria-hidden="true">✳</span> Brittany Curtis</a>
+        <a class="brand" href="#home">
+          <span class="spark" aria-hidden="true">✳</span>
+          Brittany Curtis
+        </a>
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
@@ -190,6 +229,7 @@
           <a href="#contact">Contact</a>
         </div>
       </nav>
+
       <div class="hero" id="home">
         <div class="eyebrow">Operations · Systems · Technology</div>
         <h1>Leadership that keeps<br>people and systems moving.</h1>
@@ -201,7 +241,9 @@
         <div class="hero-actions">
           <a class="button" href="#experience">Explore My Experience</a>
           <a class="button secondary" href="#projects">View My Projects</a>
-          <button class="button secondary" onclick="window.print()">Print / Save Résumé as PDF</button>
+          <button class="button secondary" type="button" onclick="window.print()">
+            Print / Save Résumé as PDF
+          </button>
         </div>
       </div>
     </div>
@@ -224,14 +266,16 @@
     </section>
 
     <section id="highlights">
-      <div class="section-heading"><h2>Core Strengths</h2></div>
+      <div class="section-heading">
+        <h2>Core Strengths</h2>
+      </div>
       <div class="grid three">
         <article class="card">
           <h3>Team Leadership</h3>
           <p>Experience supervising 20+ employees, coaching associates, and reinforcing accountability.</p>
         </article>
         <article class="card">
-          <h3>Operations & Compliance</h3>
+          <h3>Operations &amp; Compliance</h3>
           <p>Daily workload coordination, safety procedures, quality checks, and inventory discrepancy follow-up.</p>
         </article>
         <article class="card">
@@ -246,10 +290,12 @@
         <h2>Professional Experience</h2>
         <p>Open each position to review responsibilities.</p>
       </div>
+
       <div class="expand-controls" style="margin-bottom:12px;display:flex;gap:10px;flex-wrap:wrap">
         <button class="button" type="button" onclick="setExperience(true)">Expand All</button>
         <button class="button secondary" style="background:#fff;color:#142b49" type="button" onclick="setExperience(false)">Collapse All</button>
       </div>
+
       <div class="grid">
         <article class="card experience">
           <h3>Environmental Health and Safety Specialist</h3>
@@ -310,6 +356,7 @@
           </details>
         </article>
       </div>
+
       <p style="color:#627187;font-size:.9rem">
         Note: This website summarizes selected experience. It does not include confidential work details.
       </p>
@@ -317,40 +364,48 @@
 
     <section id="skills">
       <div class="section-heading">
-        <h2>Technical & Professional Skills</h2>
+        <h2>Technical &amp; Professional Skills</h2>
         <p>A combination of current technical study and practical workplace experience.</p>
       </div>
       <div class="grid">
         <article class="card">
           <h3>Programming Languages</h3>
-          <span class="tag">Java</span><span class="tag">Python</span>
-          <span class="tag">C</span><span class="tag">C++</span><span class="tag">C#</span>
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">C</span>
+          <span class="tag">C++</span>
+          <span class="tag">C#</span>
         </article>
         <article class="card">
-          <h3>IT & Systems</h3>
-          <span class="tag">Windows OS</span><span class="tag">Networking Fundamentals</span>
-          <span class="tag">Hardware Troubleshooting</span><span class="tag">Remedy Ticketing</span>
+          <h3>IT &amp; Systems</h3>
+          <span class="tag">Windows OS</span>
+          <span class="tag">Networking Fundamentals</span>
+          <span class="tag">Hardware Troubleshooting</span>
+          <span class="tag">Remedy Ticketing</span>
           <span class="tag">Digital Documentation</span>
         </article>
         <article class="card">
-          <h3>Leadership & Operations</h3>
-          <span class="tag">Associate Training</span><span class="tag">Team Development</span>
-          <span class="tag">Workload Coordination</span><span class="tag">Productivity</span>
-          <span class="tag">Inventory Audits</span><span class="tag">Safety Compliance</span>
+          <h3>Leadership &amp; Operations</h3>
+          <span class="tag">Associate Training</span>
+          <span class="tag">Team Development</span>
+          <span class="tag">Workload Coordination</span>
+          <span class="tag">Productivity</span>
+          <span class="tag">Inventory Audits</span>
+          <span class="tag">Safety Compliance</span>
         </article>
         <article class="card">
           <h3>Business Tools</h3>
           <span class="tag">Microsoft Office</span>
-          <span class="tag">Reporting</span><span class="tag">Process Documentation</span>
+          <span class="tag">Reporting</span>
+          <span class="tag">Process Documentation</span>
           <span class="tag">Issue Escalation</span>
         </article>
       </div>
     </section>
 
-    <!-- New Projects & Portfolio section -->
     <section id="projects">
       <div class="section-heading">
-        <h2>Projects & Portfolio</h2>
+        <h2>Projects &amp; Portfolio</h2>
         <p>Practical projects connecting technology, data, and operational problem-solving.</p>
       </div>
 
@@ -358,6 +413,16 @@
         <article class="card project-card">
           <span class="tag">Featured Project</span>
           <h3>Warehouse Operations Dashboard</h3>
+
+          <img
+            class="project-preview"
+            src="dashboard.png"
+            alt="Preview of the Warehouse Operations Dashboard showing KPI cards, filters, and charts"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
           <p class="project-description">
             An interactive web dashboard that models warehouse performance
             using fictional operational data. It presents key performance
@@ -408,7 +473,9 @@
     </section>
 
     <section id="education">
-      <div class="section-heading"><h2>Education & Certifications</h2></div>
+      <div class="section-heading">
+        <h2>Education &amp; Certifications</h2>
+      </div>
       <div class="panel">
         <div class="education-item">
           <h3>Bachelor of Science in Computer Science</h3>
@@ -450,7 +517,7 @@
   <footer>
     <div class="container">
       <span class="spark" aria-hidden="true">✳</span>
-      <p>© <span id="year"></span> Brittany Curtis · Leadership, systems & technology</p>
+      <p>© <span id="year"></span> Brittany Curtis · Leadership, systems &amp; technology</p>
     </div>
   </footer>
 
