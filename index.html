@@ -79,6 +79,7 @@
       text-decoration: none;
       cursor: pointer;
       font-size: .95rem;
+      font-family: inherit;
     }
     .button.secondary { background: transparent; color: white; border-color: #9eafc3; }
     .button:hover { filter: brightness(.96); }
@@ -114,6 +115,35 @@
     summary { color: var(--blue); font-weight: 700; cursor: pointer; }
     details ul { padding-left: 20px; }
     .education-item + .education-item { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 16px; }
+
+    /* Portfolio section */
+    .project-card {
+      border-top: 4px solid var(--yellow);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .project-card .project-description { flex: 1; }
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .project-links .button {
+      text-align: center;
+    }
+    .project-links .button.outline {
+      background: white;
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+    .project-note {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-top: 14px !important;
+    }
+
     .contact { background: var(--navy); color: white; }
     .contact h2 { color: white; }
     .contact a { color: var(--yellow); }
@@ -126,6 +156,8 @@
       nav { align-items: flex-start; }
       .nav-links { gap: 12px; }
       .panel, .card { padding: 18px; }
+      .project-links { width: 100%; }
+      .project-links .button { flex: 1 1 100%; }
     }
     @media print {
       body { background: white; color: #111; font-size: 10pt; }
@@ -140,6 +172,7 @@
       summary { display: none !important; }
       a { color: #111; text-decoration: none; }
       section { margin-bottom: 16px; }
+      .project-links { display: none; }
     }
   </style>
 </head>
@@ -152,6 +185,7 @@
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </div>
@@ -166,6 +200,7 @@
         </p>
         <div class="hero-actions">
           <a class="button" href="#experience">Explore My Experience</a>
+          <a class="button secondary" href="#projects">View My Projects</a>
           <button class="button secondary" onclick="window.print()">Print / Save Résumé as PDF</button>
         </div>
       </div>
@@ -312,6 +347,66 @@
       </div>
     </section>
 
+    <!-- New Projects & Portfolio section -->
+    <section id="projects">
+      <div class="section-heading">
+        <h2>Projects & Portfolio</h2>
+        <p>Practical projects connecting technology, data, and operational problem-solving.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card project-card">
+          <span class="tag">Featured Project</span>
+          <h3>Warehouse Operations Dashboard</h3>
+          <p class="project-description">
+            An interactive web dashboard that models warehouse performance
+            using fictional operational data. It presents key performance
+            indicators, compares productivity with targets, and tracks example
+            operational issues through interactive filters and charts.
+          </p>
+
+          <div>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Chart.js</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+
+          <details>
+            <summary>Project details</summary>
+            <ul>
+              <li>Displays units processed, target attainment, open incidents, and inventory discrepancies.</li>
+              <li>Filters results by department, reporting period, and issue status.</li>
+              <li>Visualizes productivity and issue status using charts.</li>
+              <li>Includes reset functionality and a responsive layout.</li>
+              <li>Uses clearly identified fictional data, including illustrative projections for longer reporting periods.</li>
+            </ul>
+          </details>
+
+          <p class="project-note">
+            Portfolio demonstration only. The dashboard does not use actual Walmart or employer data.
+          </p>
+
+          <div class="project-links">
+            <a
+              class="button"
+              href="https://reinergreyson.github.io/warehouse-operations-dashboard/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Live Dashboard ↗</a>
+
+            <a
+              class="button outline"
+              href="https://github.com/reinergreyson/warehouse-operations-dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Source Code ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="education">
       <div class="section-heading"><h2>Education & Certifications</h2></div>
       <div class="panel">
@@ -365,6 +460,7 @@
         item.open = open;
       });
     }
+
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
