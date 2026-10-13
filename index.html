@@ -1,11 +1,11 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Brittany Curtis — operations leadership, systems support, and technology portfolio.">
-  <title>Brittany Curtis | Leadership & Technology</title>
+  <title>Brittany Curtis | Leadership &amp; Technology</title>
   <style>
     :root {
       --navy: #142b49;
@@ -156,6 +156,7 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 16px;
+      width: 100%;
     }
     .project-links .button { text-align: center; }
     .project-links .button.outline {
@@ -410,7 +411,7 @@
       </div>
 
       <div class="grid">
-        <!-- EXISTING PROJECT: Warehouse Operations Dashboard (unchanged) -->
+        <!-- EXISTING PROJECT: Warehouse Operations Dashboard -->
         <article class="card project-card">
           <span class="tag">Featured Project</span>
           <h3>Warehouse Operations Dashboard</h3>
@@ -471,12 +472,11 @@
           </div>
         </article>
 
-        <!-- PROJECT: Warehouse Systems Incident Tracker -->
+        <!-- EXISTING PROJECT: Warehouse Systems Incident Tracker -->
         <article class="card project-card">
           <span class="tag">Featured Project</span>
           <h3>Warehouse Systems Incident Tracker</h3>
 
-          <!-- Incident Tracker screenshot: main dashboard -->
           <img
             class="project-preview"
             src="https://raw.githubusercontent.com/reinergreyson/warehouse-systems-incident-tracker/main/SystemTracker.png"
@@ -486,7 +486,6 @@
             height="800"
           >
 
-          <!-- Incident Tracker screenshot: incident records -->
           <img
             class="project-preview"
             src="https://raw.githubusercontent.com/reinergreyson/warehouse-systems-incident-tracker/main/TrackerRecords.png"
@@ -543,6 +542,73 @@
             <a
               class="button outline"
               href="https://github.com/reinergreyson/warehouse-systems-incident-tracker"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Source Code ↗</a>
+          </div>
+        </article>
+
+        <!-- NEW PROJECT: Inventory Audit and Reconciliation Tool -->
+        <article class="card project-card">
+          <span class="tag">Featured Project</span>
+          <h3>Inventory Audit and Reconciliation Tool</h3>
+
+          <img
+            class="project-preview"
+            src="inventory-audit-dashboard.png"
+            alt="Inventory Audit and Reconciliation Tool showing inventory KPI cards, quantities, discrepancies, and audit statuses"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <p class="project-description">
+            An interactive inventory auditing application for comparing
+            expected and counted quantities, identifying discrepancies,
+            tracking review and resolution status, and maintaining an audit
+            history. It supports CSV import and reporting, with inventory
+            and audit records preserved between browser refreshes.
+          </p>
+
+          <div>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Local Storage</span>
+            <span class="tag">CSV Import / Export</span>
+            <span class="tag">Audit History</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+
+          <details>
+            <summary>Project details</summary>
+            <ul>
+              <li>Compare expected inventory quantities against physical counts.</li>
+              <li>Calculate variances and flag discrepancies for review.</li>
+              <li>Track review and resolution actions in an audit history.</li>
+              <li>Import inventory data from CSV and export inventory and audit reports.</li>
+              <li>Preserve inventory and audit history using browser local storage.</li>
+              <li>Validate input and provide a responsive interface for inventory review.</li>
+            </ul>
+          </details>
+
+          <p class="project-note">
+            Portfolio demonstration using sample inventory data. Records are
+            stored in the user's browser and are not synchronized to a central
+            database or backend service.
+          </p>
+
+          <div class="project-links">
+            <a
+              class="button"
+              href="https://reinergreyson.github.io/inventory-audit-reconciliation-tool/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Live Application ↗</a>
+
+            <a
+              class="button outline"
+              href="https://github.com/reinergreyson/inventory-audit-reconciliation-tool"
               target="_blank"
               rel="noopener noreferrer"
             >View Source Code ↗</a>
@@ -611,4 +677,3 @@
   </script>
 </body>
 </html>
-```
