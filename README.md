@@ -24,7 +24,7 @@ Technologies
 
 Live Website
 
-"View My Portfolio" (https://YOUR-GITHUB-USERNAME.github.io/brittany-curtis-portfolio/)
+"View My Portfolio" (https://reinergreyson.github.io/brittany-curtis-resume/)
 
 Purpose
 
