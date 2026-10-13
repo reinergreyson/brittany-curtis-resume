@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brittany Curtis — operations leadership, systems support, and technology portfolio.">
+  <title>Brittany Curtis | Leadership & Technology</title>
+  <style>
+    :root {
+      --navy: #142b49;
+      --blue: #1769aa;
+      --yellow: #ffc220;
+      --ink: #243247;
+      --muted: #627187;
+      --paper: #ffffff;
+      --background: #f3f6fa;
+      --line: #dce4ed;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--blue); }
+    .container { width: min(1080px, 92%); margin: auto; }
+
+    header {
+      background: var(--navy);
+      color: white;
+      border-bottom: 5px solid var(--yellow);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .spark { color: var(--yellow); font-size: 2rem; line-height: 1; }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav-links a { color: white; text-decoration: none; font-size: .94rem; }
+    .nav-links a:hover { color: var(--yellow); }
+
+    .hero { padding: 76px 0 70px; }
+    .eyebrow {
+      color: var(--yellow);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .82rem;
+    }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.4rem); line-height: 1.08; margin: 12px 0; }
+    .hero p { max-width: 720px; font-size: 1.12rem; color: #e3eaf3; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .button {
+      display: inline-block;
+      border-radius: 7px;
+      padding: 11px 17px;
+      border: 2px solid var(--yellow);
+      background: var(--yellow);
+      color: #17263a;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: .95rem;
+    }
+    .button.secondary { background: transparent; color: white; border-color: #9eafc3; }
+    .button:hover { filter: brightness(.96); }
+
+    main { padding: 34px 0 64px; }
+    section { margin: 0 0 28px; scroll-margin-top: 20px; }
+    .section-heading { margin-bottom: 16px; }
+    h2 { color: var(--navy); font-size: 1.65rem; margin: 0 0 6px; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .panel, .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 23px;
+      box-shadow: 0 5px 20px rgba(20, 43, 73, .04);
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card h3 { color: var(--navy); margin: 0 0 6px; font-size: 1.08rem; }
+    .card p { margin: 8px 0; }
+    .tag {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      padding: 4px 9px;
+      background: #edf4fb;
+      color: #244d78;
+      border-radius: 20px;
+      font-size: .84rem;
+    }
+    .experience { border-left: 4px solid var(--yellow); }
+    .role-meta { color: var(--muted); font-size: .92rem; margin: 0 0 10px; }
+    details { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 10px; }
+    summary { color: var(--blue); font-weight: 700; cursor: pointer; }
+    details ul { padding-left: 20px; }
+    .education-item + .education-item { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 16px; }
+    .contact { background: var(--navy); color: white; }
+    .contact h2 { color: white; }
+    .contact a { color: var(--yellow); }
+    .contact p { overflow-wrap: anywhere; }
+    footer { text-align: center; color: var(--muted); padding: 20px 0 35px; font-size: .9rem; }
+
+    @media (max-width: 720px) {
+      .grid, .grid.three { grid-template-columns: 1fr; }
+      .hero { padding: 52px 0; }
+      nav { align-items: flex-start; }
+      .nav-links { gap: 12px; }
+      .panel, .card { padding: 18px; }
+    }
+    @media print {
+      body { background: white; color: #111; font-size: 10pt; }
+      header { background: white; color: #111; border-bottom: 2px solid #222; }
+      .brand, .nav-links a, .hero p, .eyebrow { color: #111; }
+      .hero { padding: 20px 0; }
+      .hero-actions, nav, footer, .expand-controls { display: none !important; }
+      main { padding: 10px 0; }
+      .panel, .card { box-shadow: none; break-inside: avoid; padding: 12px; }
+      .grid, .grid.three { grid-template-columns: 1fr 1fr; }
+      details > * { display: block !important; }
+      summary { display: none !important; }
+      a { color: #111; text-decoration: none; }
+      section { margin-bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home"><span class="spark" aria-hidden="true">✳</span> Brittany Curtis</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <div class="hero" id="home">
+        <div class="eyebrow">Operations · Systems · Technology</div>
+        <h1>Leadership that keeps<br>people and systems moving.</h1>
+        <p>
+          I bring hands-on team leadership, operational problem-solving,
+          documentation, and a growing technical background in computer science.
+          My focus is helping teams work safely, efficiently, and consistently.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#experience">Explore My Experience</a>
+          <button class="button secondary" onclick="window.print()">Print / Save Résumé as PDF</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <div class="section-heading">
+        <h2>Professional Profile</h2>
+        <p>People leadership backed by operational and technical experience.</p>
+      </div>
+      <div class="panel">
+        My background combines team leadership, safety and security operations,
+        process documentation, inventory audits, and technical issue tracking.
+        I have experience training associates, coordinating daily work, following
+        procedures, and communicating issues to the appropriate teams. I am
+        continuing to develop my software and systems knowledge through my
+        Computer Science studies.
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="section-heading"><h2>Core Strengths</h2></div>
+      <div class="grid three">
+        <article class="card">
+          <h3>Team Leadership</h3>
+          <p>Experience supervising 20+ employees, coaching associates, and reinforcing accountability.</p>
+        </article>
+        <article class="card">
+          <h3>Operations & Compliance</h3>
+          <p>Daily workload coordination, safety procedures, quality checks, and inventory discrepancy follow-up.</p>
+        </article>
+        <article class="card">
+          <h3>Systems Support</h3>
+          <p>Ticket tracking, digital documentation, issue escalation, and a foundation in IT and programming.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-heading">
+        <h2>Professional Experience</h2>
+        <p>Open each position to review responsibilities.</p>
+      </div>
+      <div class="expand-controls" style="margin-bottom:12px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="button" type="button" onclick="setExperience(true)">Expand All</button>
+        <button class="button secondary" style="background:#fff;color:#142b49" type="button" onclick="setExperience(false)">Collapse All</button>
+      </div>
+      <div class="grid">
+        <article class="card experience">
+          <h3>Environmental Health and Safety Specialist</h3>
+          <p class="role-meta">2021–Present</p>
+          <p>Safety awareness, incident response, investigation, and clear communication.</p>
+          <details>
+            <summary>View responsibilities</summary>
+            <ul>
+              <li>Monitor security systems and respond to reported incidents.</li>
+              <li>Investigate incidents, document findings, and communicate with management and relevant parties.</li>
+              <li>Use CCTV and digital tools to identify risks and support incident reviews.</li>
+              <li>Train associates on security procedures and conflict de-escalation.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card experience">
+          <h3>Technical Associate</h3>
+          <p class="role-meta">2020–2021</p>
+          <p>Cross-functional operational support and process consistency.</p>
+          <details>
+            <summary>View responsibilities</summary>
+            <ul>
+              <li>Supported production flow by coordinating with other functions.</li>
+              <li>Performed quality checks and supported compliance documentation.</li>
+              <li>Helped maintain consistent processes and communicate operational concerns.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card experience">
+          <h3>Team Lead</h3>
+          <p class="role-meta">2017–2019</p>
+          <p>Team supervision, training, workload coordination, and performance support.</p>
+          <details>
+            <summary>View responsibilities</summary>
+            <ul>
+              <li>Supervised a team of more than 20 employees and coordinated daily assignments.</li>
+              <li>Trained and coached team members while reinforcing expectations and accountability.</li>
+              <li>Coordinated scheduling and workload priorities to support productivity.</li>
+              <li>Conducted inventory audits, investigated discrepancies, and communicated findings.</li>
+              <li>Addressed team concerns and provided feedback on employee performance.</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="card experience">
+          <h3>Remedy Consultant</h3>
+          <p class="role-meta">2015–2017</p>
+          <p>Ticketing, operational issue tracking, and communication between teams.</p>
+          <details>
+            <summary>View responsibilities</summary>
+            <ul>
+              <li>Used Remedy ticketing tools to track and follow up on operational systems issues.</li>
+              <li>Communicated between floor teams and technical support.</li>
+              <li>Documented workflows and helped route issues to the appropriate support team.</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+      <p style="color:#627187;font-size:.9rem">
+        Note: This website summarizes selected experience. It does not include confidential work details.
+      </p>
+    </section>
+
+    <section id="skills">
+      <div class="section-heading">
+        <h2>Technical & Professional Skills</h2>
+        <p>A combination of current technical study and practical workplace experience.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Programming Languages</h3>
+          <span class="tag">Java</span><span class="tag">Python</span>
+          <span class="tag">C</span><span class="tag">C++</span><span class="tag">C#</span>
+        </article>
+        <article class="card">
+          <h3>IT & Systems</h3>
+          <span class="tag">Windows OS</span><span class="tag">Networking Fundamentals</span>
+          <span class="tag">Hardware Troubleshooting</span><span class="tag">Remedy Ticketing</span>
+          <span class="tag">Digital Documentation</span>
+        </article>
+        <article class="card">
+          <h3>Leadership & Operations</h3>
+          <span class="tag">Associate Training</span><span class="tag">Team Development</span>
+          <span class="tag">Workload Coordination</span><span class="tag">Productivity</span>
+          <span class="tag">Inventory Audits</span><span class="tag">Safety Compliance</span>
+        </article>
+        <article class="card">
+          <h3>Business Tools</h3>
+          <span class="tag">Microsoft Office</span>
+          <span class="tag">Reporting</span><span class="tag">Process Documentation</span>
+          <span class="tag">Issue Escalation</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-heading"><h2>Education & Certifications</h2></div>
+      <div class="panel">
+        <div class="education-item">
+          <h3>Bachelor of Science in Computer Science</h3>
+          <p class="role-meta">Concentration in Software Engineering · In progress · Expected 2027</p>
+          Continuing study in computer science, software development, and technical problem-solving.
+        </div>
+        <div class="education-item">
+          <h3>Associate of Applied Science in Information Technology</h3>
+          <p class="role-meta">Purdue Global · 2022–2024</p>
+        </div>
+        <div class="education-item">
+          <h3>Certificate in Networking with Microsoft Technologies</h3>
+          <p class="role-meta">uCertify · 2024</p>
+        </div>
+        <div class="education-item">
+          <h3>Google AI Certification</h3>
+          <p class="role-meta">Certification</p>
+        </div>
+        <div class="education-item">
+          <h3>IT Fundamentals Certification</h3>
+          <p class="role-meta">Certification</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="panel contact">
+        <h2>Let's Connect</h2>
+        <p>
+          Interested in operations leadership, systems support, or technology opportunities?
+          I'd welcome the chance to connect.
+        </p>
+        <p>Email: <a href="mailto:bccurtis94@gmail.com">bccurtis94@gmail.com</a></p>
+        <p>Phone: <a href="tel:3178684307">317-868-4307</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span class="spark" aria-hidden="true">✳</span>
+      <p>© <span id="year"></span> Brittany Curtis · Leadership, systems & technology</p>
+    </div>
+  </footer>
+
+  <script>
+    function setExperience(open) {
+      document.querySelectorAll("#experience details").forEach(item => {
+        item.open = open;
+      });
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
